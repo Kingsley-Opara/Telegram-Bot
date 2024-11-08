@@ -11,5 +11,8 @@ RUN /opt/venv/bin/pip install pip --upgrade && \
 
 # RUN chmod +x entrypoint.sh &&
 
+EXPOSE 8080
+
+
 CMD ["/opt/venv/bin/python", "./app/main.py"]
 

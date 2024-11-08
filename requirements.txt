@@ -1,0 +1,11 @@
+python-dotenv
+python-telegram-bot
+openai
+langserve[all]
+langchain-community
+upstash-vector
+jupyter
+langchain-google-genai
+google-generativeai
+tiktoken
+PyPDF2

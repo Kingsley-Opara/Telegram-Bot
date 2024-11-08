@@ -2,7 +2,14 @@ from config import get_config
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 from helpers import get_result
+from fastapi import FastAPI
 
+fastapi_app = FastAPI()
+
+
+@fastapi_app.get('/')
+def home():
+    return{"hello": "world"}
 
 config = get_config()
 
@@ -47,6 +54,7 @@ async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 if __name__ == "__main__":
     print("start")
+
     app = Application.builder().token(TOKEN).build()
 
     app.add_handler(CommandHandler("start", start_command))
@@ -57,4 +65,8 @@ if __name__ == "__main__":
 
     app.add_error_handler(error)
     print("polling......")
-    app.run_polling(poll_interval=1)
+    app.run_webhook(
+        listen="0.0.0.0",
+        port=8080,
+        webhook_url="https://telegram-chat-bot.back4app.io/home"
+    )

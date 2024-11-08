@@ -9,3 +9,5 @@ langchain-google-genai
 google-generativeai
 tiktoken
 PyPDF2
+fastapi
+uvicorn

@@ -4,6 +4,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 from helpers import get_result
 from fastapi import FastAPI
 import threading
+import uvicorn
 
 fastapi_app = FastAPI()
 

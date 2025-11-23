@@ -3,6 +3,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 from helpers import get_result
 from fastapi import FastAPI
+import threading
 
 fastapi_app = FastAPI()
 
@@ -10,6 +11,9 @@ fastapi_app = FastAPI()
 @fastapi_app.get('/')
 def home():
     return{"hello": "world"}
+
+def start_health_server():
+    uvicorn.run(fastapi_app, host="0.0.0.0", port=8081)
 
 config = get_config()
 
@@ -54,6 +58,7 @@ async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 if __name__ == "__main__":
     print("start")
+    threading.Thread(target=start_health_server, daemon=True).start()
 
     app = Application.builder().token(TOKEN).build()
 

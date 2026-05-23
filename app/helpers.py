@@ -23,7 +23,7 @@ UPSTASH_VECTOR_REST_URL = config.UPSTASH_VECTOR_REST_URL
 
 # embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
 embeddings = GoogleGenerativeAIEmbeddings(
-    model="gemini-embedding-2-preview",
+    model="models/gemini-embedding-001"
 )
 
 store = UpstashVectorStore(

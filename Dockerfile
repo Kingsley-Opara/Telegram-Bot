@@ -7,7 +7,8 @@ WORKDIR /app
 RUN python -m venv /opt/venv
 
 RUN /opt/venv/bin/pip install pip --upgrade && \ 
-    /opt/venv/bin/pip install -r requirements.txt --upgrade
+    /opt/venv/bin/pip install -r requirements.txt --upgrade && \
+    /opt/venv/bin/pip install --upgrade langchain-google-genai
 
 # RUN chmod +x entrypoint.sh &&
 

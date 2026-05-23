@@ -74,5 +74,5 @@ if __name__ == "__main__":
     app.run_webhook(
         listen="0.0.0.0",
         port=8080,
-        webhook_url="https://telegramchatbot-xd4hofo3.b4a.run/"
+        webhook_url="https://telegram-bot-eksh.onrender.com/"
     )

@@ -21,7 +21,7 @@ UPSTASH_VECTOR_REST_TOKEN = config.UPSTASH_VECTOR_REST_TOKEN
 UPSTASH_VECTOR_REST_URL = config.UPSTASH_VECTOR_REST_URL
 
 
-embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
 
 store = UpstashVectorStore(
     embedding = embeddings,
